@@ -16,8 +16,8 @@ def find_best_scaling_factor(simulated_flows, precomputed_flows, simulated_probs
     # Interpolate precomputed flows to match the exceedance probabilities of simulated flows
     precomputed_flows = np.interp(simulated_probs, precomputed_probs, precomputed_flows)
 
-    # Define range (30% to 80% exceedance probability)
-    lower_bound, upper_bound = 10, 50
+    # Define range (30% to 80% exceedance probability, or whatever you want to try)
+    lower_bound, upper_bound = 30, 80
     valid_indices = (simulated_probs >= lower_bound) & (simulated_probs <= upper_bound)
 
     # Select only middle range of flows
